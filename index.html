@@ -1,14 +1,23 @@
 <!DOCTYPE html>
+<!--lang=ru, контент сайта на русском-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+
+<!--    плохой тайтл для резюме-->
     <title>Document</title>
 </head>
     <body>
         <header class="cv-head">
+<!--            идея писать классами отдельные css свойства является не самой лучшей, здесь же не составляет труда-->
+<!--            написать один класс со всеми своствами сразу-->
+<!--            такой подход который ты применил называется утилитный и существует скорее как заглушки для вёрстки админок на bootstrap,-->
+<!--            когда речь идёт о большом полноценном проекте желательно не делать лапшу из css классов,-->
+<!--            делать хорошие переиспользуемые виджеты. Конкретная проблема в утилитном подходе это большое число строк рефакторинга-->
+<!--            html если меняется вёрстка, когда стоило бы править css файлы-->
             <div class="container d-flex justify-content-between">
                 <div class="cv-short">
                     <div class="cv-short-head">
@@ -42,16 +51,27 @@
                 </div>
             </div>
         </header>
+
+<!--        много лишней вложенности, классы можно комбинировать на одном теге без проблем-->
         <main class="cv-body">
             <div class="container">
+<!--                я бы не стал education выводить отдельно обособлено скажем от стажа работы или изученных технологий,-->
+<!--                лучше что-то более общее, скажем .summary-item-->
                 <div class="cv-education">
+<!--                плохое именование классов, логичнее будет при твоём именовании .education__header и .education__body в данном случае,
+                    уже внутри css будет что-то слева, а что-то справа, именовать блоки нужно по содержимому-->
                     <div class="cv-education-left">
                         <h2 class="cv-education-heading">Образование</h2>
                     </div>
                     <div class="cv-education-right">
                         <ul class="cv-education-list">
                             <li class="cv-education-list-item">
-                                <span class="item-heading__blue">Мгу им.Н.П.Огарева,очная, магистратура, Институт электроники и светотехники, электроника и наноэлектроника</span>
+<!--                                это будет <h3 class="heading-accent"></h3> как вариант,-->
+<!--                                ещё вариант норм <h3 class="summary-item__subheading"></h3> если будет элементом блока .summary-item
+                                    потому что уже есть выше <h2 class="summary-item__heading">Образование</h2>-->
+                                <span class="item-heading__blue">
+                                    <!--                                Мгу им.Н.П.Огарева -> МГУ им. Н.П. Огарева - точное написание-->
+                                    Мгу им.Н.П.Огарева,очная, магистратура, Институт электроники и светотехники, электроника и наноэлектроника</span>
                                 <span class="item-info">
                                     01.09.2020 - 01.01.2022
                                 </span>
@@ -79,6 +99,7 @@
                                 </span>
                             </li>
                             <ul class="cv-working-list">
+<!--                                не может быть внутри ul, только снаружи, более того это заголовок, ты его даже классом правильно назвал-->
                                 <span class="item-heading__black responsibilities">Функциональные обязанности</span>
                                 <li>Проведение светотехнических расчетов</li>
                                 <li>Подбор оборудования под требования заказчика</li>
@@ -95,6 +116,7 @@
                     <div class="cv-education-right">
                         <ul class="cv-education-list">
                             <li class="cv-education-list-item">
+<!--                                это заголовок-->
                                 <span class="item-heading__blue"> Опыт программирования вне университета</span>
                                 <span class="item-info">
                                     Базовые знания html и сss (верстал простые лендинги по макету figma), учился самостоятельно.
