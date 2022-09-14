@@ -1,169 +1,140 @@
 <!DOCTYPE html>
-<!--lang=ru, контент сайта на русском-->
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <title>Sidorov-CV</title>
+    
 
-<!--    плохой тайтл для резюме-->
-    <title>Document</title>
 </head>
-    <body>
-        <header class="cv-head">
-<!--            идея писать классами отдельные css свойства является не самой лучшей, здесь же не составляет труда-->
-<!--            написать один класс со всеми своствами сразу-->
-<!--            такой подход который ты применил называется утилитный и существует скорее как заглушки для вёрстки админок на bootstrap,-->
-<!--            когда речь идёт о большом полноценном проекте желательно не делать лапшу из css классов,-->
-<!--            делать хорошие переиспользуемые виджеты. Конкретная проблема в утилитном подходе это большое число строк рефакторинга-->
-<!--            html если меняется вёрстка, когда стоило бы править css файлы-->
-            <div class="container d-flex justify-content-between">
-                <div class="cv-short">
-                    <div class="cv-short-head">
-                        <h1 class="cv-main-heading">Сидоров Андрей Константинович</h1>
-                        <div class="mt-2">Frontend-Developer</div>
-                    </div>
-                    <ul class="cv-short-bottom">
-                        <li class="cv-short-item">
-                            <span>Дата рождения: </span>
-                            <span>27.05.1998</span>
-                        </li>
-                        <li class="cv-short-item">
-                            <span>Город: </span>
-                            <span>Саранск</span>
-                        </li>
-                        <li class="cv-short-item">
-                            <span>Телефон: </span>
-                            <a href="tel:8 (902)-230-24-63">8 (902)-230-24-63</a>
-                        </li>
-                        <li class="cv-short-item">
-                            <span>Email: </span>
-                            <a href="mail:tedeyk27@gmail.com">tedeyk27@gmail.com</a>
-                        </li><li class="cv-short-item">
-                            <span>githib: </span>
-                            <a href="https://github.com/SidorovAndr">https://github.com/SidorovAndr</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="cv-img">
-                    <img src="./cvph.jpg" alt="главное фото">
-                </div>
-            </div>
-        </header>
+<body >
+    <div class= "header  ">
+    <div class="container d-flex ">
+        <div class="">
+        <h1 class="name"> Сидоров Анрей Константинович</h1>
+        <div class="headertext"> Frontend-Developer</div>
+    
+        <ul class="contactinformation headertext margin">
+         <li class="contactinformation">
+            <span>Дата рождения: </span>
+            <span>27.05.1998</span>
+            </li>
+            <li class="contactinformation">
+            <span>Город: </span>
+            <span>Саранск</span>
+            </li>
+            <li class="contactinformation">
+            <span>Телефон: </span>
+            <a >8 (902)-230-24-63</a>
+            </li>
+            <li class="contactinformation">
+            <span>Email: </span>
+            <a href="mail:tedeyk27@gmail.com">tedeyk27@gmail.com</a>
+            </li>
+         <li class="contactinformation">
+            <span>Github: </span>
+            <a target="_blank" href="https://github.com/SidorovAndr">https://github.com/SidorovAndr</a>
+        </li>
+        </ul>
+        </div>
+        <div class="photo">
+            <img src="cvph.jpg" alt="главное фото">
+        </div>
+    </div>
+    
+    </div>
 
-<!--        много лишней вложенности, классы можно комбинировать на одном теге без проблем-->
-        <main class="cv-body">
-            <div class="container">
-<!--                я бы не стал education выводить отдельно обособлено скажем от стажа работы или изученных технологий,-->
-<!--                лучше что-то более общее, скажем .summary-item-->
-                <div class="cv-education">
-<!--                плохое именование классов, логичнее будет при твоём именовании .education__header и .education__body в данном случае,
-                    уже внутри css будет что-то слева, а что-то справа, именовать блоки нужно по содержимому-->
-                    <div class="cv-education-left">
-                        <h2 class="cv-education-heading">Образование</h2>
-                    </div>
-                    <div class="cv-education-right">
-                        <ul class="cv-education-list">
-                            <li class="cv-education-list-item">
-<!--                                это будет <h3 class="heading-accent"></h3> как вариант,-->
-<!--                                ещё вариант норм <h3 class="summary-item__subheading"></h3> если будет элементом блока .summary-item
-                                    потому что уже есть выше <h2 class="summary-item__heading">Образование</h2>-->
-                                <span class="item-heading__blue">
-                                    <!--                                Мгу им.Н.П.Огарева -> МГУ им. Н.П. Огарева - точное написание-->
-                                    Мгу им.Н.П.Огарева,очная, магистратура, Институт электроники и светотехники, электроника и наноэлектроника</span>
-                                <span class="item-info">
-                                    01.09.2020 - 01.01.2022
-                                </span>
-                            </li>
-                            <li class="cv-education-list-item">
-                                <span class="item-heading__blue">Мгу им.Н.П.Огарева,очная, бакалавриат, институт электроники и светотехники, электроника и наноэлектроника</span>
-                                <span class="item-info">
-                                    01.09.2016 - 01.01.2020
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-education">
-                    <div class="cv-education-left">
-                        <h2 class="cv-education-heading">Опыт работы</h2>
-                    </div>
-                    <div class="cv-education-right">
-                        <ul class="cv-list">
-                            <li class="cv-education-list-item">
-                                <span class="item-heading__blue"> АО "АСТЗ"  </span>
-                                <span class="item-heading__black">Инженер-проектировщик </span>
-                                <span class="item-info">
-                                    08.010.2020 - по наст. время
-                                </span>
-                            </li>
-                            <ul class="cv-working-list">
-<!--                                не может быть внутри ul, только снаружи, более того это заголовок, ты его даже классом правильно назвал-->
-                                <span class="item-heading__black responsibilities">Функциональные обязанности</span>
-                                <li>Проведение светотехнических расчетов</li>
-                                <li>Подбор оборудования под требования заказчика</li>
-                                <li>Согласование и защита проектов</li>
-                                
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-education">
-                    <div class="cv-education-left">
-                        <h2 class="cv-education-heading">Профессиональные навыки</h2>
-                    </div>
-                    <div class="cv-education-right">
-                        <ul class="cv-education-list">
-                            <li class="cv-education-list-item">
-<!--                                это заголовок-->
-                                <span class="item-heading__blue"> Опыт программирования вне университета</span>
-                                <span class="item-info">
-                                    Базовые знания html и сss (верстал простые лендинги по макету figma), учился самостоятельно.
-                                </span>
-                                
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-education">
-                    <div class="cv-education-left">
-                        <h2 class="cv-education-heading">Личные достижения</h2>
-                    </div>
-                    <div class="cv-education-right">
-                        <ul class="cv-education-list">
-                            <li class="cv-education-list-item">
-                                <span class="item-heading__blue">Уровень английского</span>
-                                <span class="item-info">
-                                   А1-А2
-                                </span>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-education">
-                    <div class="cv-education-left">
-                        <h2 class="cv-education-heading">Дополнительная информация</h2>
-                    </div>
-                    <div class="cv-education-right">
-                        <ul class="cv-education-list">
-                            <li class="cv-education-list-item">
-                                <span class="item-heading__blue">Цели посещения курсов</span>
-                                <span class="item-info">Хочется сменить профессию на более востребованную,
-                                    получить знания и опыт, которые в дальнейшем помогут при трудоустройстве на
-                                    работу
-                                </span>
-                            </li>
-                            <li class="cv-education-list-item">
-                                <span class="item-heading__blue">Откуда узнали про курс</span>
-                                <span class="item-info">Этот курс мне посоветовали друзья, которые уже работают в сфере IT</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="cv-footer"></footer>
-    </body>
+
+<div class="myinformation container"> 
+    <div class="myinformationleft">Образование</div>
+    <div class="myinformationright">
+        <ul class="">
+            <li class="list-item">
+                <span class="item-heading"> МГУ им. Н.П. Огарева,очная, магистратура, Институт электроники и светотехники, электроника и наноэлектроника</span>
+                <span class="bodytext">01.09.2020 - 01.01.2022</span>
+            </li>
+            <li class="list-item">
+                <span class="item-heading">МГУ им. Н.П. Огарева,очная, бакалавриат, институт электроники и светотехники, электроника и наноэлектроника</span>
+                <span class="bodytext">
+                    01.09.2016 - 01.01.2020
+                </span>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+<div class="myinformation container"> 
+    <div class="myinformationleft">Опыт работы</div>
+    <div class="myinformationright">
+        <ul class="">
+            <li class="list-item">
+                <span class="item-heading"> АО "АСТЗ"</span>
+                <span class="summary-item">Инженер-проектировщик</span>
+                <span class="bodytext">08.010.2020 - по наст. время</span>
+            </li>
+            <li class="summary-item">Функциональные обязанности</li>
+             
+                <li class="bodytext">Проведение светотехнических расчетов</li>
+                <li class="bodytext">Подбор оборудования под требования заказчика</li>
+                <li class="bodytext">Согласование и защита проектов</li>
+             
+        </ul>
+        
+    </div>
+</div>
+<div class="myinformation container"> 
+    <div class="myinformationleft">Профессиональные навыки</div>
+    <div class="myinformationright">
+        <ul class="">
+            <li class="list-item">
+                <span class="item-heading"> Опыт программирования вне университета</span>
+                <span class="bodytext">Базовые знания html и сss (верстал простые лендинги по макету figma), учился самостоятельно.</span>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+
+
+<div class="myinformation container"> 
+    <div class="myinformationleft">Личные достижения</div>
+    <div class="myinformationright">
+        <ul class="">
+            <li class="list-item">
+                <span class="item-heading"> Уровень английского</span>
+                <span class="bodytext">А1-А2</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="myinformation container"> 
+    <div class="myinformationleft">Дополнительная информация</div>
+    <div class="myinformationright">
+        <ul class="">
+            <li class="list-item">
+                <span class="item-heading"> Цели посещения курсов</span>
+                <span class="bodytext">Хочется сменить профессию на более востребованную, получить знания и опыт, которые в дальнейшем помогут при трудоустройстве на работу</span>
+                
+            </li>
+            <li class="list-item">
+                <span class="item-heading"> Откуда узнали про курс</span>
+                <span class="bodytext">Этот курс мне посоветовали друзья, которые уже работают в сфере IT</span>
+                
+            </li>
+        </ul>
+    </div>
+</div>
+    
+
+
+
+
+
+
+
+
+</body>
 </html>
